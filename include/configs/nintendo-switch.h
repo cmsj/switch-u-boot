@@ -40,20 +40,25 @@
 
 #define CONFIG_SYS_MEM_RESERVE_SECURE (4 * SZ_1M)
 
+/*
 #undef CONFIG_EXTRA_ENV_SETTINGS
 #define CONFIG_EXTRA_ENV_SETTINGS               \
         "kernel_addr=0x83000000\0"              \
         "dtb_addr=0x8d000000\0"                 \
         "unzip_addr=0x85000000\0"               \
         "mmc_part=1:2\0"
+        */
 
 #undef CONFIG_BOOTCOMMAND
 #define CONFIG_BOOTCOMMAND                      \
+        "sdp 0"
+/*
         "ext4load mmc $mmc_part $kernel_addr; " \
         "ext4load mmc $mmc_part $dtb_addr; "    \
         "unzip $kernel_addr $unzip_addr; "      \
         "setenv bootargs 'root=/dev/mmcblk0p2 rw fbcon=rotate:3 rootwait'; " \
         "usb reset; "                           \
         "booti $unzip_addr - $dtb_addr"
+        */
 
 #endif /* _NINTENDO_SWITCH_H */
