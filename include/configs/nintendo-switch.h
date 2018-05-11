@@ -46,6 +46,8 @@
         "dtb_addr=0x8d000000\0"                 \
         "unzip_addr=0x85000000\0"               \
         "mmc_part=1:2\0"
+
+#undef CONFIG_BOOTCOMMAND
 #define CONFIG_BOOTCOMMAND                      \
         "ext4load mmc $mmc_part $kernel_addr; " \
         "ext4load mmc $mmc_part $dtb_addr; "    \
