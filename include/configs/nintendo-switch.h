@@ -55,6 +55,5 @@
         "setenv bootargs 'root=/dev/mmcblk0p2 rw fbcon=rotate:3 rootwait'; " \
         "usb reset; "                           \
         "booti $unzip_addr - $dtb_addr"
-//        "sdp 0"
 
 #endif /* _NINTENDO_SWITCH_H */
